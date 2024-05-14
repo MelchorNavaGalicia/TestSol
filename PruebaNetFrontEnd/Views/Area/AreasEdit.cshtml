@@ -1,0 +1,26 @@
+﻿﻿
+@model PruebaNetFrontEnd.Models.Area
+
+<form asp-action="AreasEdit">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-center">Editar Area</h1>
+        <input hidden asp-for="IdArea">
+        <hr />
+        <div class="row">
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Nombre de Area</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="NombreArea" class="form-control" />
+                <span asp-validation-for="NombreArea" class="text-danger"></span>
+            </div>
+            <div class="col-5">
+                <a asp-action="AreasIndex" class="btn btn-primary form-control d-inline-block mr-2">Regresar</a>
+            </div>
+            <div class="col-5">
+                <input type="submit" value="Actualizar" class="btn btn-success form-control d-inline-block" />
+            </div>
+        </div>
+    </div>
+</form>

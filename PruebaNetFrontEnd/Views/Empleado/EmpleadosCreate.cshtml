@@ -1,0 +1,55 @@
+﻿
+@model PruebaNetFrontEnd.Models.Empleado
+
+<form asp-action="EmpleadosCreate">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-center">Registar Empleado</h1>
+
+        <hr />
+        <div class="row">
+
+            <div class="pb-3">
+                <label for="IdArea" class="form-label">Nombre de Empleado:</label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="pb-3">
+                <label for="IdArea" class="form-label">Apellido Paterno:</label>
+                <input asp-for="Apellido_Paterno" class="form-control" />
+                <span asp-validation-for="Apellido_Paterno" class="text-danger"></span>
+            </div>
+            <div class="pb-3">
+                <label for="IdArea" class="form-label">Apellido Materno:</label>
+                <input asp-for="Apellido_Materno" class="form-control" />
+                <span asp-validation-for="Apellido_Materno" class="text-danger"></span>
+            </div>
+            <div class="pb-3">
+                <label for="IdArea" class="form-label">Selecciona un área:</label>
+                <select id="IdArea" name="IdArea" class="form-control">
+                    <option value="">Selecciona un área</option>
+                    @foreach (var area in ViewBag.Areas)
+                    {
+                        <option value="@area.IdArea">@area.NombreArea</option>
+                    }
+                </select>
+            </div>
+            <div class="pb-3">
+                <label for="IdArea" class="form-label">Selecciona una fecha de nacimiento:</label>
+                <input asp-for="Fecha_Nacimiento" class="form-control" />
+                <span asp-validation-for="Fecha_Nacimiento" class="text-danger"></span>
+            </div>
+            <div class="pb-3">
+                <label for="IdArea" class="form-label">Sueldo:</label>
+                <input asp-for="Sueldo" class="form-control" />
+                <span asp-validation-for="Sueldo" class="text-danger"></span>
+            </div>
+            <div class="col-5">
+                <a asp-action="EmpleadosIndex" class="btn btn-primary form-control d-inline-block mr-2">Regresar</a>
+            </div>
+            <div class="col-5">
+                <input type="submit" value="Crear" class="btn btn-success form-control d-inline-block" />
+            </div>
+        </div>
+    </div>
+</form>

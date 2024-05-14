@@ -1,0 +1,60 @@
+﻿﻿
+@model IEnumerable<Area>
+
+
+<div class="card shadow border-0 mt-4">
+	<div class="card-header bg-secondary bg-gradient ml-0 py-3">
+		<div class="row">
+			<div class="col-12 text-center">
+				<h1 class="text-white">Menu de Areas</h1>
+			</div>
+		</div>
+	</div>
+	<div class="card-body p-4">
+		<div class="row pb-3">
+			<div class="col-6">
+			</div>
+			<div class="col-6 text-end">
+				<a asp-action="AreasCreate" class="btn btn-outline-primary"><i class="bi bi-plus-square"></i> Agregar Nueva Area</a>
+
+			</div>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>
+						Area
+					</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td>
+							@item.NombreArea
+						</td>
+						<td>
+							<a class="btn btn-danger" asp-action="AreasDelete" asp-route-id="@item.IdArea">
+								<i class="bi bi-trash"></i>
+							</a>
+
+						</td>
+
+						<td>
+							<a class="btn btn-secondary" asp-action="AreasEdit" asp-route-id="@item.IdArea">
+								<i class="bi bi-file-arrow-up"></i>
+							</a>
+
+						</td>
+					</tr>
+				}
+
+			</tbody>
+		</table>
+
+	</div>
+
+</div>
